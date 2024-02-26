@@ -62,8 +62,8 @@
 
 <script setup>
 
-const {data } = useFetch("/api/iphones");
-console.log(data.value);
+// const {data } = useFetch("/api/iphones");
+// console.log(data.value);
 
 
 definePageMeta({

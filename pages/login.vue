@@ -58,6 +58,8 @@ const url = "https://reqres.in/api/login";
 
 
 
+
+
 const isLoading = ref(false)
 const _error = ref(null);
 
@@ -67,6 +69,8 @@ const form = reactive( {
 })
 
  async function onSubmit(){
+
+    
 
     if (isLoading.value) return;
     
@@ -91,6 +95,7 @@ const auth = useAuth()
 auth.value.isAuthenticated = true
 navigateTo('/')
 }
+
 
 
 </script>

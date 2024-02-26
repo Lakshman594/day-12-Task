@@ -5,10 +5,11 @@
       <div v-else>
         <div v-for="(item, index) in cart" :key="index" class="border-b border-gray-300 mb-4 pb-4">
           <div class="flex items-center">
+           
             <img :src="`/images/iphone-${route.params.name}.jpg`" alt="Product Image" class="w-24 h-24 mr-4">
             <div>
               <h2 class="text-lg font-semibold">{{ item.name }}</h2>
-              <p>Price: ${{ item.price }}</p>
+              <!-- <p>Price: ${{ item.price }}</p> -->
               <button @click="removeFromCart(index)" class="text-red-600 underline mt-2">Remove</button>
             </div>
           </div>
@@ -34,6 +35,7 @@
   
   function removeFromCart(index) {
     cart.value.splice(index, 1);
+    
   }
   
   function checkout() {

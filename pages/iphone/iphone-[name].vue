@@ -12,12 +12,19 @@
                     
                     <span v-if="isincart()">Remove From Cart</span>
                     <span v-else>BuyNow</span>
-                   
-                
                 
                 </button>
-
-
+        
+                <div class="mt-10 text-bold">
+                    <p>
+                        Brand	Apple <br>
+                        Model Name	iPhone {{ name }} <br>
+                        Network Service Provider	Unlocked for All Carriers<br>
+                        Operating System	iOS 15<br>
+                        Cellular Technology	5G
+                    </p>
+                </div>
+          
             </div>
 
         </div>
@@ -42,6 +49,7 @@ import { useRoute } from 'vue-router';
  const fullname = computed(() => {
     return `iphone-${route.params.name}`;
  })
+ 
  const cart = useCart();
 
  function isincart() {
@@ -51,6 +59,7 @@ import { useRoute } from 'vue-router';
  function addToCart() {
     if(!isincart()){
             cart.value.push({name : fullname})
+            
     }
     else{
         cart.value = cart.value.filter((ct) => ct.name !== fullname.value)
